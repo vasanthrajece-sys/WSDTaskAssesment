@@ -17,6 +17,7 @@ public class App {
         int quotes = Integer.parseInt(args[1]);
 
         CertificateUpdateGenerator certificateUpdateGenerator = new CertificateUpdateGenerator(threads, quotes);
-        certificateUpdateGenerator.generateQuotes();
+        certificateUpdateGenerator.generateQuotes()
+                .forEach(update -> System.out.println(update.call()));
     }
 }
